@@ -1,1 +1,11 @@
 <b> Welcome to Trendy Gits </b>
+
+	<% if current_user %>
+		Welcome, <%= current_user.name %>.
+		Last time I checked your email was: <%#= current_user.followers %>
+		<%= link_to "Sign Out", signout_path %>
+		<% else %>
+
+		<%=link_to "Sign in with Twitter", "/auth/twitter"%>
+		<%=link_to "Sign in GitHub", "/auth/github"%>
+		<% end %>	
